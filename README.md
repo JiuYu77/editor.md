@@ -1,7 +1,7 @@
 # Editor.md
 
 - [x] 增加 `mermaid` 支持 [Mermaid](https://mermaid.js.org/)，示例：examples/JiuYu77/memory.html；
-- [x] 修复HTML \<table> 的换行符问题: 换行写表格，渲染后有多个换行符<br>；
+- [x] 修复HTML \<table> 的换行符问题: 换行写表格，渲染后有多个换行符\<br>；
 
 增加 `mermaid` 支持 [Mermaid](https://mermaid.js.org/)
 
