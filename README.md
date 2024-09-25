@@ -1,5 +1,12 @@
 # Editor.md
 
+增加 `mermaid` 支持
+[Mermaid](https://mermaid.js.org/)
+
+
+[======]
+以下是 [pandao/editor.md](https://github.com/pandao/editor.md) 的**READMD.md**内容。
+
 ![](https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png)
 
 ![](https://img.shields.io/github/stars/pandao/editor.md.svg)
@@ -107,7 +114,7 @@ If you using modular script loader:
             // htmlDecode : "style,script,iframe",  // Note: If enabled, you should filter some dangerous HTML tags for website security.
         });
     });
-</script>    
+</script>
 ```
 
 > See the full example: [http://editor.md.ipandao.com/examples/html-preview-markdown-to-html.html](http://editor.md.ipandao.com/examples/html-preview-markdown-to-html.html)
