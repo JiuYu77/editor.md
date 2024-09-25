@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta name="renderer" content="webkit" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>内存的各个区</title>
+    <style>
+        .list{
+            position: fixed;
+            right: 0;
+            margin-right: 10px;
+            margin-top: 10px;
+            top: 0;
+            border: 1px solid rgb(196, 166, 166);
+            border-radius: 10px;
+            box-shadow: 1px 3px 2px rgba(194, 194, 194, 0.5);
+            padding-left: 5px;
+            padding-right: 5px;
+            padding-bottom: 5px;
+
+            /* max-width: 170px; */
+            width: 170px;
+            display: none;
+        }
+        .title00{
+            color: rgb(25, 179, 240);
+        }
+        a{
+            /*去掉文字链接的下划线*/
+            text-decoration: none;
+            color: rgb(126, 142, 156);
+        }
+        p.time{
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+        /* -----------------MarkDown------------------ */
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        *, *:before, *:after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        body{
+            padding: 40px;
+            padding-top: 0px;
+        }
+
+        #layout > header, .btns {
+            width: auto;
+        }
+
+        #sidebar {
+            min-width: 22%;
+            max-width: 25%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            right: 0;
+            overflow: hidden;
+            background: #fff;
+            z-index: 100;
+            /* padding: 18px;  */
+            border: 1px solid #ddd;
+            border-top: none;
+            border-bottom: none;
+
+            /* editormd 的 markdow 目录 */
+            /* display: none; */
+        }
+
+        #sidebar:hover {
+            overflow: auto;
+        }
+
+        #sidebar h1 {
+            font-size: 16px;
+            /* color: rgb(238, 113, 190); */
+        }
+
+        #custom-toc-container {
+            padding-left: 0;
+        }
+
+        #test-editormd-view, #test-editormd-view2 {
+            padding-left: 25%;
+            padding-right: 25%;
+            margin: 0;
+        }
+        /* -----------------MarkDown------------------ */
+        #test-editormd-view topic{
+            display: block;
+            color: rgb(238, 113, 190);
+            text-align: center;
+            margin: 0px;
+            background: linear-gradient(to right, rgb(167,213,254), rgb(127,248,254));
+            font-size:xx-large;
+            font-weight: bold;
+        }
+        #test-editormd-view h1{
+            color: black;
+        }
+        #test-editormd-view h2{
+            color: rgb(75, 190, 175);
+        }
+        #test-editormd-view h3{
+            color: rgb(70, 130, 180);
+        }
+        #test-editormd-view h4 {color: rgb(238, 113, 190);}
+    </style>
+    <!-- 引入editormd样式文件 -->
+    <link rel="stylesheet" href="../../css/editormd.preview.css" />
+</head>
+<body>
+<div id="layout">
+    <!-- 目录 -->
+<div id="sidebar">
+    <h1 style="padding-left: 18px;padding-top: 5px;">Table of Contents</h1>
+    <div class="markdown-body editormd-preview-container" id="custom-toc-container">#custom-toc-container</div>
+</div>
+    <!--记录的内容-->
+<div id="test-editormd-view">
+    <textarea id="append-test" style="display:none;">
+<topic>内存的各个区</topic>
+# 内存分区
+`内存单元`可以分为`系统区`(操作系统使用)和`用户区`(用户程序使用)两部分。
+
+<table><tr>
+<th></th><th>分类</th>
+	    <th>说明</th>
+	</tr >
+	<tr >
+	    <td rowspan="2">内存</td>
+	    <td>系统区</td>
+	    <td>操作系统使用</td>
+	</tr>
+	<tr>
+	    <td>用户区</td>
+	    <td>用户程序使用</td>
+	</tr>
+</table>
+
+**用户区**：分为==代码区==(code area、程序代码区，存放程序的二进制代码)和==数据区==(存放程序数据)。
+
+<table>
+	<tr>
+	    <th></th>
+	    <th>分类</th>
+	    <th>说明</th>
+	</tr >
+	<tr >
+	    <td rowspan="2">用户区</td>
+	    <td>代码区</td>
+	    <td>code area、程序代码区，存放程序的二进制代码</td>
+	</tr>
+	<tr>
+	    <td>数据区</td>
+	    <td>存放程序数据</td>
+	</tr>
+</table>
+
+**数据区**：分为==静态数据区==(静态区，有最长生存期)和==动态数据区==(动态区，有较短生存期)。
+
+<table>
+	<tr>
+	    <th></th>
+	    <th>分类</th>
+	    <th>说明</th>
+	</tr >
+	<tr >
+	    <td rowspan="2">数据区</td>
+	    <td>静态数据区</td>
+	    <td>也称“静态存储区”，分为全局数据区和文字常量区；程序运行前就分配好了，静态存储区中的数据在程序运行期间一直存在，直到程序结束才被释放</td>
+	</tr>
+	<tr>
+	    <td>动态数据区</td>
+	    <td>也称“动态存储区”，分为堆区（heap area、堆空间）和栈区（stack area、栈空间）；程序运行起来之后才会使用</td>
+	</tr>
+</table>
+
+```mermaid
+graph LR
+	A[内存]-->B1[系统区]
+	A-->B2[用户区]
+	B2-->C1[代码区]
+	B2-->C2[数据区]
+	style C3 stroke-dasharray:10,5
+	style C4 stroke-dasharray:10,5
+	B2-->C3[共享地址空间]
+	B2-->C4[进程控制块]
+	C2-->D1[静态数据区]
+	C2-->D2[动态数据区]
+	D1-->E1[全局数据区]
+	D1-->E2[文字常量区]
+	D2-->E3[堆区]
+	D2-->E4[栈区]
+```
+
+# 内存各个区的作用
+>`程序代码区`(code area)：存储程序的执行代码（二进制代码），包括函数、指令和程序逻辑。两个特点：
+>只读：不能被修改，使其只读的原因是防止程序意外地修改了代码区的指令。
+>共享：目的是对于频繁执行的程序，只需要在内存中有一份代码即可。
+
+`全局数据区`(data area)：存放的是==全局变量==和==静态变量==(常指局部静态变量，包括全局静态变量和局部静态变量)。
+初始化的全局变量和静态变量在一块区域， 未初始化的全局变量和未初始化的静态变量在(有时初始化区和未初始化区不一定相邻)另一块区域，将初始化为0(字符与字符串初始化并不不相同)。在编译时分配，结束时由系统释放。
+
+>`文字常量区`(位于静态数据区)：用于存储常量（常变量、字面量）数据。字面量，例如字符串常量。这个区域的数据在程序运行期间不可修改。 程序结束后由系统释放。
+
+`栈区`(stack area)：存放的是==局部变量==、==const修饰的局部变量（局部常变量）==、==函数参数==、==调用函数的状态==、==返回地址==等。
+自高地址向低地址扩展或自低地址向高地址扩展（不同芯片不一样）。由编译器自动分配释放，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈(只有一个方向能插入与删除，即栈顶)。
+栈区是一块内存区域，用于存储函数调用和局部变量。它具有后进先出（Last In, First Out）的特性，因此最后进入栈区的数据首先被移出。栈区的大小通常是固定的，栈区上的内存管理是由编译器自动处理的。
+
+>`堆区`(heap area)
+>程序员自动申请的内存（==动态申请的内存==）被分配到堆空间，由程序员自己释放， 若程序员不释放，程序结束时可能由操作系统回收 。
+>堆是==动态分配==的内存区域，用于存储动态创建的数据，例如通过new和malloc函数分配的对象。堆的大小可以根据需要在运行时进行调整，但需要手动释放分配的内存，以避免内存泄漏。
+
+# 参考文献
+https://blog.csdn.net/hrlnldy/article/details/8018076
+http://yncoders.com/show/4727
+    </textarea>
+</div>
+</div>
+<script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="../../lib/marked.min.js"></script>
+<script src="../../lib/prettify.min.js"></script>
+
+<script src="../../lib/raphael.min.js"></script>
+<script src="../../lib/underscore.min.js"></script>
+<script src="../../lib/sequence-diagram.min.js"></script>
+<script src="../../lib/flowchart.min.js"></script>
+<script src="../../lib/jquery.flowchart.min.js"></script>
+
+<script src="../../editormd.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+        // var testEditormdView = editormd.markdownToHTML("test-editormd-view", {
+        //     markdown : $("#append-test").text(),//+ "\r\n" + $("#append-test").text(),
+        //     htmlDecode: "style,script,iframe", // you can filter tags decode
+        //     emoji: true,
+        //     taskList: true,
+        //     tex: true, // 默认不解析
+        //     flowChart: true, // 默认不解析
+        //     sequenceDiagram: true, // 默认不解析
+        //     previewTheme: "monokai",//预览主题
+        //     tocm:true
+        // });
+
+        $.get("", function(markdown){
+            testEditormdView = editormd.markdownToHTML("test-editormd-view", {
+                    markdown :  $("#append-test").text(),
+                    htmlDecode: true,       // 开启 HTML 标签解析，为了安全性，默认不开启
+                    //toc: false,
+                    tocm: true,    // Using [TOCM]
+                    tocContainer: "#custom-toc-container", // 自定义 ToC 容器层
+                    //gfm: false,
+                    //tocDropdown: true,
+                    // markdownSourceCode : true, // 是否保留 Markdown 源码，即是否删除保存源码的 Textarea 标签
+                    emoji: true,
+                    taskList : true,
+                    tex: true,  // 默认不解析
+                    flowChart: true,  // 默认不解析
+                    sequenceDiagram : true,  // 默认不解析
+                });
+        });
+    });
+</script>
+<style>#cnzz_stat_icon_1254310986{display: none;}</style>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254310986'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/stat.php%3Fid%3D1254310986%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+
+<script type="text/javascript">
+	(async() => {
+		const {default : mermaid } = await import('https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs');
+		mermaid.run();
+	}
+	)();
+</script>
+
+<div class="list">
+    <p>文章目录</p>
+    <a href="#00" class="title00">内存</a><br/>
+    <a href="#01">会分配新内存的操作</a><br/>
+    <a href="#02">节省内存的操作</a>
+</div>
+</body>
+</html>
