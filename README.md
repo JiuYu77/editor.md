@@ -3,6 +3,8 @@
 * 增加 `mermaid` 支持 [Mermaid](https://mermaid.js.org/)
 * 修复HTML <table> 的换行符问题: 换行写表格，渲染后有多个换行符<br>
 
+![](images/JiuYu77/mermaid.png)
+![](images/JiuYu77/html_table.png)
 -----
 以下是 [pandao/editor.md](https://github.com/pandao/editor.md) 的**READMD.md**内容。
 
