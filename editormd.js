@@ -1,7 +1,6 @@
 /*
  * Editor.md
  *
- *
  * @file        editormd.js
  * @description Open source online markdown editor.
  * @license     MIT License
