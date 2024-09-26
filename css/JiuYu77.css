@@ -1,8 +1,8 @@
 /*
  * Editor.md
  *
- * @file        editormd.preview.css 
- * @version     v1.5.0 
+ * @file        editormd.preview.css
+ * @version     v1.5.0
  * @description Open source online markdown editor.
  * @license     MIT License
  * @author      Pandao
@@ -2402,8 +2402,8 @@
 .editormd-logo-7x:before,
 .editormd-logo-8x:before {
   content: "\e1987";
-  /* 
-  HTML Entity &#xe1987; 
+  /*
+  HTML Entity &#xe1987;
   example: <span class="editormd-logo">&#xe1987;</span>
   */
 }
@@ -3140,13 +3140,21 @@
   border-top: 1px solid #ddd;
   background: none;
 }
+/* 单行代码样式 ``  JiuYu77 */
 .editormd-preview-container code, .editormd-html-preview code {
-  border: 1px solid #ddd;
-  background: #f6f6f6;
+  /* border: 1px solid #ddd; */
+  /* background: #f6f6f6; */
+  border: 1px solid rgb(255, 243, 243);
+  background: rgb(255, 243, 243);
+  color: rgb(199, 37, 78);
+
   padding: 3px;
   border-radius: 3px;
   font-size: 14px;
 }
+/**
+* 多行代码，边框、背景色
+*/
 .editormd-preview-container pre, .editormd-html-preview pre {
   border: 1px solid #ddd;
   background: #f6f6f6;
@@ -3160,8 +3168,10 @@
 .editormd-preview-container pre code, .editormd-html-preview pre code {
   padding: 0;
 }
+/* 字体设置 */
 .editormd-preview-container pre, .editormd-preview-container code, .editormd-preview-container kbd, .editormd-html-preview pre, .editormd-html-preview code, .editormd-html-preview kbd {
-  font-family: "YaHei Consolas Hybrid", Consolas, "Meiryo UI", "Malgun Gothic", "Segoe UI", "Trebuchet MS", Helvetica, monospace, monospace;
+  /* font-family: "YaHei Consolas Hybrid", Consolas, "Meiryo UI", "Malgun Gothic", "Segoe UI", "Trebuchet MS", Helvetica, monospace, monospace; */
+  font-family: Consolas, Verdana, 'Trebuchet MS', monospace, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
 }
 .editormd-preview-container table thead tr, .editormd-html-preview table thead tr {
   background-color: #F8F8F8;
@@ -3301,6 +3311,7 @@
 pre.prettyprint {
   padding: 2px;
   border: 1px solid #888;
+  background-color: #00000012; /* JiuYu77 */
 }
 
 /* Specify class=linenums on a pre to get line numbering */
@@ -3327,7 +3338,7 @@ li.L3,
 li.L5,
 li.L7,
 li.L9 {
-  background: #eee;
+  /*background: #eee;*/ /*  JiuYu77 */
 }
 
 .editormd-preview-container pre.prettyprint, .editormd-html-preview pre.prettyprint {
