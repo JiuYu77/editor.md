@@ -22,7 +22,7 @@
 - Support AMD/CMD (Require.js & Sea.js) Module Loader, and Custom/define editor plugins;
 
 [README & Examples (English)](https://pandao.github.io/editor.md/en.html)
-  
+
 
 --------
 
