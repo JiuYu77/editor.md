@@ -93,7 +93,7 @@ If you using modular script loader:
 <link rel="stylesheet" href="editormd/css/editormd.preview.css" />
 <div id="test-markdown-view">
     <!-- Server-side output Markdown text -->
-    <textarea style="display:none;">### Hello world!</textarea>             
+    <textarea style="display:none;">### Hello world!</textarea>
 </div>
 <script src="jquery.min.js"></script>
 <script src="editormd/editormd.js"></script>
@@ -169,7 +169,7 @@ Editor.md options and default values:
     fontSize             : "13px",
     saveHTMLToTextarea   : false,          // If enable, Editor will create a <textarea name="{editor-id}-html-code"> tag save HTML code for form post to server-side.
     disabledKeyMaps      : [],
-    
+
     onload               : function() {},
     onresize             : function() {},
     onchange             : function() {},
@@ -181,7 +181,7 @@ Editor.md options and default values:
     onfullscreenExit     : function() {},
     onscroll             : function() {},
     onpreviewscroll      : function() {},
-    
+
     imageUpload          : false,          // Enable/disable upload
     imageFormats         : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
     imageUploadURL       : "",             // Upload url
@@ -194,7 +194,7 @@ Editor.md options and default values:
     tocDropdown          : false,          // Enable/disable Table Of Contents dropdown menu
     tocContainer         : "",             // Custom Table Of Contents Container Selector
     tocStartLevel        : 1,              // Said from H1 to create ToC
-    htmlDecode           : false,          // Open the HTML tag identification 
+    htmlDecode           : false,          // Open the HTML tag identification
     pageBreak            : true,           // Enable parse page break [========]
     atLink               : true,           // for @link
     emailLink            : true,           // for email address auto link
@@ -224,7 +224,7 @@ Editor.md options and default values:
         "ucwords"        : "<a href=\"javascript:;\" title=\"ucwords\" unselectable=\"on\"><i class=\"fa\" name=\"ucwords\" style=\"font-size:20px;margin-top: -3px;\">Aa</i></a>"
     },
     toolbarIconTexts     : {},
-    
+
     lang : {  // Language data, you can custom your language.
         name        : "zh-cn",
         description : "开源在线Markdown编辑器<br/>Open source online Markdown editor.",
